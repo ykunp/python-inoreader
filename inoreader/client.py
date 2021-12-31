@@ -216,7 +216,7 @@ class InoreaderClient(object):
             continuation = response.get('continuation')
 
     def fetch_unread(self, folder=None, tags=None, limit=None):
-        for article in self.fetch_articles(folder=folder, tags=tags, unread=True):
+        for article in self.fetch_articles(folder=folder, tags=tags, unread=True, limit=limit):
             yield article
 
     def fetch_starred(self, folder=None, tags=None, limit=None):
