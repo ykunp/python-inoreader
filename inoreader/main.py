@@ -36,7 +36,7 @@ APPKEY_ENV_NAME = 'INOREADER_APP_KEY'
 TOKEN_ENV_NAME = 'INOREADER_AUTH_TOKEN'
 ENV_NAMES = [APPID_ENV_NAME, APPKEY_ENV_NAME, TOKEN_ENV_NAME]
 
-CONFIG_FILE = os.path.join(os.environ.get('HOME'), '.inoreader')
+CONFIG_FILE = os.path.join(os.environ.get('HOME'), '.inoreader') if os.name == 'posix' else os.path.join(os.environ.get('APPDATA'), '.inoreader')
 LOGGER = logging.getLogger(__name__)
 
 
